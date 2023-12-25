@@ -23,6 +23,9 @@ function navigator() {
     } else {
         homePage()
     }
+
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
 }
 
 function homePage() {
@@ -56,6 +59,13 @@ function categoryPage() {
     categoriesPreviewSection.classList.add('inactive')
     genericSection.classList.remove('inactive')
     movieDetailSection.classList.add('inactive')
+
+    const [ ,urlInfo ] = location.hash.split('=')
+    const [ categogyId, categogyName ] = urlInfo.split('-')
+
+    headerCategoryTitle.innerText = decodeURI(categogyName)
+
+    getMoviesByCategory(categogyId)
 }
 
 function moviePage() {
