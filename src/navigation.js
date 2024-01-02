@@ -82,6 +82,9 @@ function categoryPage() {
     headerCategoryTitle.innerText = decodeURI(categogyName)
 
     getMoviesByCategory(categogyId)
+
+    infiniteScroll = getPaginatedMoviesByCategory(categogyId)
+
 }
 
 function moviePage() {
@@ -120,6 +123,8 @@ function searchPage() {
     const [ , query] = location.hash.split('=')
 
     getMoviesBySearch(decodeURI(query))
+
+    infiniteScroll = getPaginatedMoviesBySearch(query)
 }
 
 function trendsPage() {
