@@ -14,11 +14,11 @@ arrowBtn.addEventListener('click', () => {
     history.back()
 })
 
-window.addEventListener('load', navigator, false)
-window.addEventListener('hashchange', navigator, false)
+window.addEventListener('load', navigation, false)
+window.addEventListener('hashchange', navigation, false)
 window.addEventListener('scroll', infiniteScroll, false)
 
-function navigator() {
+function navigation() {
     if (infiniteScroll) {
         window.removeEventListener('scroll', infiniteScroll,{passive: false})
         infiniteScroll = undefined
